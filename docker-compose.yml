@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:6.0
+    container_name: drone-mongo
+    restart: unless-stopped
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+
+  backend:
+    build: .
+    container_name: drone-backend
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/dronedata
+    depends_on:
+      - mongo
+
+volumes:
+  mongo-data:

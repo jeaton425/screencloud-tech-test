@@ -1,0 +1,53 @@
+meta {
+  name: Send Partial Telemetry Data
+  type: http
+  seq: 4
+}
+
+post {
+  url: 127.0.0.1:3000/api/telemetry
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  [
+    {
+      "droneId": "DRN001",
+      "timestamp": "2025-04-29T22:30:00Z",
+      "eventType": "takeoff",
+      "statusCode": 200,
+      "telemetryData": {
+      }
+    },
+    {
+      "droneId": "DRN002",
+      "timestamp": "2025-04-29T22:35:15Z",
+      "eventType": "hover",
+      "statusCode": 200,
+      "telemetryData": {
+        "location": {
+          "latitude": 34.0522,
+          "longitude": -118.2437
+        }
+      }
+    },
+    {
+      "droneId": "DRN001",
+      "timestamp": "2025-04-29T22:40:45Z",
+      "eventType": "landing",
+      "statusCode": 201,
+      "telemetryData": {
+        "location": {
+          "latitude": 37.7750,
+          "longitude": -122.4189
+        }
+      }
+    }
+  ]
+  
+}

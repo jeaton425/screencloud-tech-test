@@ -1,0 +1,11 @@
+meta {
+  name: Get Telemetry Data On Spesific Drone
+  type: http
+  seq: 3
+}
+
+get {
+  url: 127.0.0.1:3000/api/telemetry/DRN001
+  body: json
+  auth: inherit
+}
