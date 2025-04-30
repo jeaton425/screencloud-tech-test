@@ -1,5 +1,6 @@
 # screencloud-tech-test
-Tech Test for Screencloud 
+
+This is a test project for Screencloud.
 
 ## Setup
 
@@ -7,8 +8,23 @@ Run the following commands to setup the environment:
 
 ```
 docker-compose up --build
+```
 
 Once the containers are up, you can use the Bruno scripts to make POST and GET requests to the API.
+
+## Tests
+
+I've created Jest tests both for the Routes and the Services. To run the tests, run the following command:
+
+```
+npm run test
+``` 
+
+## Assumptions and Discussions
+
+This project went off the assumption that the service would be hit by a queue service like AWS SQS to handle the async requests. Due to the time frame of the test, I've opted just to assume that the service will be hit directly by the API requests. It allows for both single and batch requests to be made to the API as well as the ability to still process invalid/currupted data as requests to ensure there is no 'surviver bias' in the data. 
+
+I've opted for a express.js application as it was quick and easy to setup the routes for the API. I've also opted to use MongoDB as the database for the data as the No-SQL meant I didn't need to worry about the schema and the data was easy to insert and retrieve. Also for a project were you expect to recieve alot of different types of records then MongoDB would be a good choice (e.g. different event types and telemetryData). 
 
 
 ## Stuff I'd Like To Have Done
