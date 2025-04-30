@@ -1,4 +1,4 @@
-import Telemetry, { ITelemetry } from '../models/Telemetry';
+import Telemetry, { ITelemetry } from '../models/Telemetry.js';
 
 export function validateRecord(record: Partial<ITelemetry>): string[] {
   const errors: string[] = [];

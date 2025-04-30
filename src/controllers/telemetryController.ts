@@ -3,8 +3,8 @@ import {
   validateRecord,
   saveTelemetryRecords,
   getTelemetryByDroneId,
-} from '../services/telemetryService';
-import { ITelemetry } from '../models/Telemetry';
+} from '../services/telemetryService.js';
+import { ITelemetry } from '../models/Telemetry.js';
 
 export async function postTelemetry(req: Request, res: Response): Promise<void> {
   if (!req.body || typeof req.body !== 'object') {

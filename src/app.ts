@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
-import telemetryRoutes from './routes/telemetry';
+import telemetryRoutes from './routes/telemetry.js';
 
 const app = express();
 app.use(bodyParser.json());
