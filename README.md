@@ -37,9 +37,11 @@ For Integration tests, id use a tool like Playwright to mimic the API Requests t
 
 Following a structure that allowed me to best separate concerns and create reusable code that was effectively testable. 
 
+I used MongoMemoryServer as it provided a fast, isolated, reliable and dependency-free teesting enviroment as I was previously getting errors and opted to do this to reduce both the runtime and reduce the chances of other tests affecting it. 
+
 For validation I did briefly look into using Zod and would have opted to use this now (hadn't used it but have started researching into it for the project on the Home Office since doing this challange) 
 
-For endpoints for GET requests, I could have thought a bit more about the types of queries that the user might want 
+For endpoints for GET requests, I could have thought a bit more about the types of queries that the user might want as well as pagination and filtering to limit the number of responses. 
 
 For additional endpoints that I didn't create, I could have created DELETE. However ideally this would want to be audited to ensure that all DB interactions are recorded
 
@@ -53,6 +55,5 @@ With the use of the LatLong's, would be an interesting feature to have a map tra
   Could be used to see bad flight paths or enviromental hazards causing Drones to not return or not successfully make a delivery
   Could be used to find optimal routes for drones flight paths in the future
   Could be used to track suspicious missing deliveries
-
 
 
