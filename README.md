@@ -47,6 +47,8 @@ For additional endpoints that I didn't create, I could have created DELETE. Howe
 
 For Fields, I only had a single field in telemetryData so ideally should have added more such as Battery Life and other fields 
 
+I'd not store my enviroment values hard coded in the application, add .env values for these (very much not good practice) 
+
 Also could be additional validation to record missing expected data, for example:
   If a drone has taken off, then it is assumed that has landed if the data is recorded (assuming data is delivered on landing). 
   If a drone had delivered an Item, then it is assumed it has taken off and landed (with the above assumption being valid) 
