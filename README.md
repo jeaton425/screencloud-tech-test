@@ -32,3 +32,27 @@ I've opted for a express.js application as it was quick and easy to setup the ro
 Ideally this would be utilising a queue service like AWS SQS to handle the async requests, but felt would have taken me outside the time frame of the test.
 
 For Integration tests, id use a tool like Playwright to mimic the API Requests to check that the responses were as expected (Unsure what detail to add sadly but would love to expand on this more if additional questions arise)
+
+## Additional Notes for Interview (8/5/25)
+
+Following a structure that allowed me to best separate concerns and create reusable code that was effectively testable. 
+
+For validation I did briefly look into using Zod and would have opted to use this now (hadn't used it but have started researching into it for the project on the Home Office since doing this challange) 
+
+For endpoints for GET requests, I could have thought a bit more about the types of queries that the user might want 
+
+For additional endpoints that I didn't create, I could have created DELETE. However ideally this would want to be audited to ensure that all DB interactions are recorded
+
+For Fields, I only had a single field in telemetryData so ideally should have added more such as Battery Life and other fields 
+
+Also could be additional validation to record missing expected data, for example:
+  If a drone has taken off, then it is assumed that has landed if the data is recorded (assuming data is delivered on landing). 
+  If a drone had delivered an Item, then it is assumed it has taken off and landed (with the above assumption being valid) 
+
+With the use of the LatLong's, would be an interesting feature to have a map track the event locations to see maps plotted for users
+  Could be used to see bad flight paths or enviromental hazards causing Drones to not return or not successfully make a delivery
+  Could be used to find optimal routes for drones flight paths in the future
+  Could be used to track suspicious missing deliveries
+
+
+
